@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER JSON NEXUS - Ultimate JSON Formatter & Tools</title>
+    <meta name="description" content="Free online JSON formatter, validator, minifier with cyberpunk aesthetics. Format, validate, minify, and compare JSON with our powerful developer tools.">
+    <meta name="keywords" content="JSON formatter online, JSON validator free, Pretty print JSON, JSON minifier tool, Format JSON online">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CYBER JSON NEXUS - Ultimate JSON Formatter">
+    <meta property="og:description" content="The most powerful JSON formatter with a cyberpunk twist">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-rain"></canvas>
+    
+    <!-- Particle Effects Container -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="cyber-header">
+            <div class="logo-container">
+                <h1 class="neon-logo glitch" data-text="CYBER JSON NEXUS">
+                    <span class="logo-icon">⚡</span>
+                    CYBER JSON NEXUS
+                    <span class="logo-icon">⚡</span>
+                </h1>
+                <div class="tagline">The Ultimate JSON Power Tool</div>
+            </div>
+            
+            <!-- Header Ad Banner -->
+            <div class="ad-banner header-ad">
+                <div class="ad-placeholder">
+                    <span class="ad-label">Advertisement 728x90</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Left Sidebar Ads -->
+            <aside class="sidebar left-sidebar">
+                <div class="ad-container">
+                    <div class="ad-placeholder ad-300x250">
+                        <span class="ad-label">Ad 300x250</span>
+                    </div>
+                </div>
+                <div class="ad-container">
+                    <div class="ad-placeholder ad-300x600">
+                        <span class="ad-label">Ad 300x600</span>
+                    </div>
+                </div>
+                
+                <!-- Stats Widget -->
+                <div class="stats-widget neon-border">
+                    <h3>Your Stats</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">JSONs Formatted</span>
+                        <span class="stat-value" id="format-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Bytes Processed</span>
+                        <span class="stat-value" id="bytes-count">0</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main JSON Formatter Area -->
+            <main class="json-workspace">
+                <!-- Tool Tabs -->
+                <div class="tool-tabs">
+                    <button class="tab-btn active" data-tab="format">
+                        <span class="tab-icon">📝</span> Format JSON
+                    </button>
+                    <button class="tab-btn" data-tab="minify">
+                        <span class="tab-icon">🗜️</span> Minify
+                    </button>
+                    <button class="tab-btn" data-tab="validate">
+                        <span class="tab-icon">✅</span> Validate
+                    </button>
+                    <button class="tab-btn" data-tab="csv">
+                        <span class="tab-icon">📊</span> JSON to CSV
+                    </button>
+                    <button class="tab-btn" data-tab="diff">
+                        <span class="tab-icon">🔍</span> JSON Diff
+                    </button>
+                    <button class="tab-btn" data-tab="schema">
+                        <span class="tab-icon">🏗️</span> Schema Gen
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content active" id="format-tab">
+                    <div class="json-editor-container">
+                        <!-- Input Section -->
+                        <div class="editor-section">
+                            <div class="section-header">
+                                <h3 class="neon-text">INPUT JSON</h3>
+                                <div class="editor-controls">
+                                    <button class="control-btn" id="paste-btn" title="Paste from clipboard">
+                                        <span>📋</span> Paste
+                                    </button>
+                                    <button class="control-btn" id="sample-btn" title="Load sample JSON">
+                                        <span>🎲</span> Sample
+                                    </button>
+                                    <button class="control-btn" id="clear-input-btn" title="Clear input">
+                                        <span>🗑️</span> Clear
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <div class="line-numbers" id="input-lines"></div>
+                                <textarea 
+                                    id="json-input" 
+                                    class="json-textarea" 
+                                    placeholder="Paste your JSON here..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                            <div class="editor-footer">
+                                <span class="size-indicator" id="input-size">0 bytes</span>
+                                <span class="status-indicator" id="input-status">Ready</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button class="action-btn primary holographic" id="format-btn">
+                                <span class="btn-icon">⚡</span>
+                                FORMAT JSON
+                                <span class="btn-shortcut">Ctrl+F</span>
+                            </button>
+                            <button class="action-btn secondary" id="minify-quick-btn">
+                                <span class="btn-icon">🗜️</span>
+                                MINIFY
+                                <span class="btn-shortcut">Ctrl+M</span>
+                            </button>
+                        </div>
+
+                        <!-- Output Section -->
+                        <div class="editor-section">
+                            <div class="section-header">
+                                <h3 class="neon-text">FORMATTED OUTPUT</h3>
+                                <div class="editor-controls">
+                                    <button class="control-btn" id="copy-btn" title="Copy to clipboard">
+                                        <span>📄</span> Copy
+                                    </button>
+                                    <button class="control-btn" id="download-btn" title="Download JSON">
+                                        <span>💾</span> Download
+                                    </button>
+                                    <button class="control-btn" id="tree-view-btn" title="Tree view">
+                                        <span>🌳</span> Tree
+                                    </button>
+                                    <select class="control-select" id="indent-select">
+                                        <option value="2">2 spaces</option>
+                                        <option value="4">4 spaces</option>
+                                        <option value="tab">Tab</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <div class="line-numbers" id="output-lines"></div>
+                                <div id="json-output" class="json-output"></div>
+                            </div>
+                            <div class="editor-footer">
+                                <span class="size-indicator" id="output-size">0 bytes</span>
+                                <span class="path-indicator" id="json-path"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="features-grid">
+                        <div class="feature-card neon-border">
+                            <h4>🚀 Lightning Fast</h4>
+                            <p>Process JSON instantly in your browser</p>
+                        </div>
+                        <div class="feature-card neon-border">
+                            <h4>🔍 Smart Validation</h4>
+                            <p>Real-time error detection with line numbers</p>
+                        </div>
+                        <div class="feature-card neon-border">
+                            <h4>🎨 Syntax Highlighting</h4>
+                            <p>Beautiful color-coded JSON structure</p>
+                        </div>
+                        <div class="feature-card neon-border">
+                            <h4>📊 Size Analysis</h4>
+                            <p>Track JSON size and optimization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minify Tab -->
+                <div class="tab-content" id="minify-tab">
+                    <div class="json-editor-container">
+                        <div class="editor-section full-width">
+                            <div class="section-header">
+                                <h3 class="neon-text">MINIFY JSON</h3>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="minify-input" 
+                                    class="json-textarea" 
+                                    placeholder="Paste JSON to minify..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="action-btn primary holographic" id="minify-execute-btn">
+                                    <span class="btn-icon">🗜️</span>
+                                    MINIFY JSON
+                                </button>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="minify-output" 
+                                    class="json-textarea" 
+                                    placeholder="Minified output will appear here..."
+                                    readonly
+                                ></textarea>
+                            </div>
+                            <div class="compression-stats">
+                                <div class="stat-card">
+                                    <span class="stat-label">Original Size</span>
+                                    <span class="stat-value" id="original-size">0 bytes</span>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-label">Minified Size</span>
+                                    <span class="stat-value" id="minified-size">0 bytes</span>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-label">Compression</span>
+                                    <span class="stat-value" id="compression-ratio">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Validate Tab -->
+                <div class="tab-content" id="validate-tab">
+                    <div class="json-editor-container">
+                        <div class="editor-section full-width">
+                            <div class="section-header">
+                                <h3 class="neon-text">VALIDATE JSON</h3>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <div class="line-numbers" id="validate-lines"></div>
+                                <textarea 
+                                    id="validate-input" 
+                                    class="json-textarea" 
+                                    placeholder="Paste JSON to validate..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                            <div class="validation-results" id="validation-results">
+                                <div class="validation-status" id="validation-status">
+                                    <span class="status-icon">⏳</span>
+                                    <span class="status-text">Ready to validate</span>
+                                </div>
+                                <div class="error-list" id="error-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSV Tab -->
+                <div class="tab-content" id="csv-tab">
+                    <div class="json-editor-container">
+                        <div class="editor-section">
+                            <div class="section-header">
+                                <h3 class="neon-text">JSON TO CSV CONVERTER</h3>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="csv-json-input" 
+                                    class="json-textarea" 
+                                    placeholder="Paste JSON array to convert to CSV..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="action-btn primary holographic" id="convert-csv-btn">
+                                    <span class="btn-icon">📊</span>
+                                    CONVERT TO CSV
+                                </button>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="csv-output" 
+                                    class="json-textarea" 
+                                    placeholder="CSV output will appear here..."
+                                    readonly
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diff Tab -->
+                <div class="tab-content" id="diff-tab">
+                    <div class="diff-container">
+                        <div class="diff-panel">
+                            <div class="section-header">
+                                <h3 class="neon-text">JSON 1 (Original)</h3>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="diff-input1" 
+                                    class="json-textarea" 
+                                    placeholder="Paste first JSON..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div class="diff-panel">
+                            <div class="section-header">
+                                <h3 class="neon-text">JSON 2 (Modified)</h3>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="diff-input2" 
+                                    class="json-textarea" 
+                                    placeholder="Paste second JSON..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn primary holographic" id="compare-btn">
+                            <span class="btn-icon">🔍</span>
+                            COMPARE JSON
+                        </button>
+                    </div>
+                    <div class="diff-results" id="diff-results"></div>
+                </div>
+
+                <!-- Schema Tab -->
+                <div class="tab-content" id="schema-tab">
+                    <div class="json-editor-container">
+                        <div class="editor-section">
+                            <div class="section-header">
+                                <h3 class="neon-text">JSON SCHEMA GENERATOR</h3>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <textarea 
+                                    id="schema-input" 
+                                    class="json-textarea" 
+                                    placeholder="Paste JSON to generate schema..."
+                                    spellcheck="false"
+                                ></textarea>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="action-btn primary holographic" id="generate-schema-btn">
+                                    <span class="btn-icon">🏗️</span>
+                                    GENERATE SCHEMA
+                                </button>
+                            </div>
+                            <div class="editor-wrapper neon-border-animated">
+                                <div id="schema-output" class="json-output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Ad Banner -->
+                <div class="ad-banner middle-ad">
+                    <div class="ad-placeholder">
+                        <span class="ad-label">Advertisement 728x90</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Sidebar Ads -->
+            <aside class="sidebar right-sidebar">
+                <div class="ad-container">
+                    <div class="ad-placeholder ad-300x250">
+                        <span class="ad-label">Ad 300x250</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Tools Widget -->
+                <div class="quick-tools neon-border">
+                    <h3>Quick Actions</h3>
+                    <button class="quick-btn" id="escape-json">Escape JSON</button>
+                    <button class="quick-btn" id="unescape-json">Unescape JSON</button>
+                    <button class="quick-btn" id="sort-keys">Sort Keys</button>
+                    <button class="quick-btn" id="remove-nulls">Remove Nulls</button>
+                </div>
+                
+                <div class="ad-container">
+                    <div class="ad-placeholder ad-300x600">
+                        <span class="ad-label">Ad 300x600</span>
+                    </div>
+                </div>
+
+                <!-- Settings Panel -->
+                <div class="settings-panel neon-border">
+                    <h3>Settings</h3>
+                    <div class="setting-item">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Dark Mode</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="line-numbers-toggle" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Line Numbers</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Font Size</label>
+                        <input type="range" id="font-size-slider" min="12" max="20" value="14">
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="cyber-footer">
+            <!-- Footer Ad Banner -->
+            <div class="ad-banner footer-ad">
+                <div class="ad-placeholder">
+                    <span class="ad-label">Advertisement 728x90</span>
+                </div>
+            </div>
+            
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Keyboard Shortcuts</h4>
+                    <ul class="shortcuts-list">
+                        <li><kbd>Ctrl+F</kbd> Format JSON</li>
+                        <li><kbd>Ctrl+M</kbd> Minify JSON</li>
+                        <li><kbd>Ctrl+V</kbd> Validate JSON</li>
+                        <li><kbd>Ctrl+C</kbd> Copy Output</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>✨ Real-time Validation</li>
+                        <li>🎨 Syntax Highlighting</li>
+                        <li>📊 JSON to CSV</li>
+                        <li>🔍 JSON Diff Tool</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p class="footer-text">
+                        CYBER JSON NEXUS - The ultimate JSON power tool for developers.
+                        Format, validate, and transform JSON with style.
+                    </p>
+                    <div class="social-links">
+                        <button class="social-btn">Share</button>
+                        <button class="social-btn">Star</button>
+                        <button class="social-btn">Tweet</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CYBER JSON NEXUS | Built with 💜 and ⚡</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile Sticky Ad -->
+    <div class="mobile-sticky-ad">
+        <div class="ad-placeholder">
+            <span class="ad-label">Mobile Ad 320x50</span>
+        </div>
+    </div>
+
+    <!-- Success/Error Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Processing...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
