@@ -1,0 +1,23 @@
+{
+  "name": "cyber-json-nexus",
+  "version": "1.0.0",
+  "description": "A cyberpunk-themed JSON formatter with comprehensive developer tools",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "json",
+    "formatter",
+    "validator",
+    "minifier",
+    "cyberpunk",
+    "developer-tools"
+  ],
+  "author": "Cyber JSON Nexus",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
