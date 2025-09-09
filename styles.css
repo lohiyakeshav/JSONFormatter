@@ -419,6 +419,18 @@ a:hover {
     font-size: var(--font-size-sm);
 }
 
+.footer-author {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-author:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
 /* ===== Ad Containers ===== */
 .ad-container {
     margin: var(--spacing-lg) auto;
