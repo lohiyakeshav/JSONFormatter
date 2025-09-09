@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter - Clean & Minimal JSON Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense Configuration -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
+            crossorigin="anonymous"></script>
+    
+    <!-- Auto Ads (Optional - for additional automatic ad placement) -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</head>
+<body>
+    <!-- Clean Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">JSON Tools</div>
+            <div class="nav-links">
+                <a href="#formatter">Formatter</a>
+                <a href="#validator">Validator</a>
+                <a href="#minify">Minify</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with subtle ad -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>JSON Formatter</h1>
+            <p>Clean, fast, and minimal JSON formatting tools</p>
+        </div>
+        <!-- Native Ad Block 1 - Looks like a feature card -->
+        <div class="ad-container ad-native">
+            <!-- Google AdSense Display Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Tool Controls -->
+        <div class="controls">
+            <button class="btn btn-primary" id="formatBtn">Format</button>
+            <button class="btn" id="minifyBtn">Minify</button>
+            <button class="btn" id="validateBtn">Validate</button>
+            <button class="btn" id="clearBtn">Clear</button>
+            <button class="btn" id="copyBtn">Copy</button>
+        </div>
+
+        <!-- JSON Editor Section -->
+        <div class="editor-container">
+            <!-- Input Section -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>Input JSON</h2>
+                    <span class="status" id="inputStatus"></span>
+                </div>
+                <textarea 
+                    id="jsonInput" 
+                    class="json-textarea" 
+                    placeholder="Paste your JSON here..."
+                    spellcheck="false"
+                ></textarea>
+            </div>
+
+            <!-- Side Ad - Vertical Banner -->
+            <div class="ad-container ad-vertical">
+                <!-- Google AdSense Vertical Display Ad -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:600px"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <!-- Output Section -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>Formatted Output</h2>
+                    <span class="status" id="outputStatus"></span>
+                </div>
+                <div class="output-wrapper">
+                    <pre id="jsonOutput" class="json-output"></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- In-content Ad -->
+        <div class="ad-container ad-inline">
+            <!-- Google AdSense In-feed Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-fb+5w+4e-db+86"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Format & Beautify</h3>
+                    <p>Instantly format messy JSON with proper indentation</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Validate JSON</h3>
+                    <p>Check for syntax errors and get helpful error messages</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Minify</h3>
+                    <p>Compress JSON by removing unnecessary whitespace</p>
+                </div>
+                <!-- Native Ad as Feature Card -->
+                <div class="feature-card ad-native-card">
+                    <!-- Google AdSense Native Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-format="autorelaxed"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- Another Ad Block -->
+        <div class="ad-container ad-inline">
+            <!-- Google AdSense Rectangle Ad -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:336px;height:280px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Additional Tools Section -->
+        <section class="tools-section">
+            <h2>More Tools</h2>
+            <div class="tools-grid">
+                <a href="#" class="tool-card">
+                    <h3>JSON to CSV</h3>
+                    <p>Convert JSON data to CSV format</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <h3>JSON to XML</h3>
+                    <p>Transform JSON to XML structure</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <h3>JSON Diff</h3>
+                    <p>Compare two JSON objects</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <h3>Schema Generator</h3>
+                    <p>Generate JSON Schema from data</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Ad -->
+    <footer class="footer">
+        <div class="ad-container ad-footer">
+            <!-- Google AdSense Footer Banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="footer-content">
+            <p>&copy; 2025 Crafted with ❤️ by <a href="https://keshavlohiya.vercel.app/" target="_blank" rel="noopener" class="footer-author">Keshav Lohiya</a></p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Side Ad for Desktop -->
+    <div class="ad-container ad-sticky">
+        <!-- Google AdSense Skyscraper Ad -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

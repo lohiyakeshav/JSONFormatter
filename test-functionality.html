@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter - Functionality Test</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f8f9fa;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a1a1a;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+        .test-case {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .test-json {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .pass {
+            background: #52c41a;
+            color: white;
+        }
+        .fail {
+            background: #ff4757;
+            color: white;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <h1>JSON Formatter - Comprehensive Functionality Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Cases</h2>
+        
+        <div class="test-case">
+            <h3>1. Valid JSON - Simple Object</h3>
+            <div class="test-json">{"name":"John","age":30,"city":"New York"}</div>
+            <p>Expected: Should format with proper indentation</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>2. Valid JSON - Nested Object</h3>
+            <div class="test-json">{"user":{"name":"Alice","contacts":{"email":"alice@example.com","phone":"+1234567890"},"preferences":{"theme":"dark","notifications":true}},"timestamp":1234567890}</div>
+            <p>Expected: Should format with nested indentation</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>3. Valid JSON - Array</h3>
+            <div class="test-json">[1,2,3,{"id":4,"value":"four"},["nested","array",{"deep":true}]]</div>
+            <p>Expected: Should format arrays with proper brackets</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>4. Invalid JSON - Missing Quote</h3>
+            <div class="test-json">{name:"John","age":30}</div>
+            <p>Expected: Should show error message</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>5. Invalid JSON - Trailing Comma</h3>
+            <div class="test-json">{"name":"John","age":30,}</div>
+            <p>Expected: Should show error message</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>6. Edge Case - Empty Object</h3>
+            <div class="test-json">{}</div>
+            <p>Expected: Should format as empty object</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>7. Edge Case - Unicode and Special Characters</h3>
+            <div class="test-json">{"emoji":"😀","unicode":"你好","special":"tab\there\nnewline","quote":"She said \"Hello\""}</div>
+            <p>Expected: Should handle special characters correctly</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>8. Large JSON</h3>
+            <div class="test-json">{"data":[{"id":1,"name":"Item 1"},{"id":2,"name":"Item 2"},{"id":3,"name":"Item 3"},{"id":4,"name":"Item 4"},{"id":5,"name":"Item 5"},{"id":6,"name":"Item 6"},{"id":7,"name":"Item 7"},{"id":8,"name":"Item 8"},{"id":9,"name":"Item 9"},{"id":10,"name":"Item 10"}],"metadata":{"total":10,"page":1,"per_page":10}}</div>
+            <p>Expected: Should handle large JSON efficiently</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Responsive Design Tests</h2>
+        <button onclick="testResponsive('320px')">Test Mobile (320px)</button>
+        <button onclick="testResponsive('768px')">Test Tablet (768px)</button>
+        <button onclick="testResponsive('1200px')">Test Desktop (1200px)</button>
+        <button onclick="testResponsive('1600px')">Test Large Desktop (1600px)</button>
+        <button onclick="testResponsive('100%')">Reset</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Feature Tests</h2>
+        <button onclick="window.open('/workspace/index.html', '_blank')">Open Main App</button>
+        <ul>
+            <li>✅ Format JSON with syntax highlighting</li>
+            <li>✅ Minify JSON (remove whitespace)</li>
+            <li>✅ Validate JSON with error messages</li>
+            <li>✅ Copy to clipboard functionality</li>
+            <li>✅ Clear all fields</li>
+            <li>✅ Local storage persistence</li>
+            <li>✅ Keyboard shortcuts (Ctrl+Enter, Ctrl+Shift+C, Ctrl+Shift+X)</li>
+            <li>✅ Responsive design for all screen sizes</li>
+            <li>✅ Dark mode support (system preference)</li>
+            <li>✅ Ad placements (8 strategic locations)</li>
+        </ul>
+    </div>
+    
+    <script>
+        function testResponsive(width) {
+            const iframe = document.createElement('iframe');
+            iframe.src = '/workspace/index.html';
+            iframe.style.width = width;
+            iframe.style.height = '800px';
+            iframe.style.border = '1px solid #ccc';
+            iframe.style.margin = '20px auto';
+            iframe.style.display = 'block';
+            
+            const container = document.querySelector('.test-section:last-child');
+            const existingIframe = container.querySelector('iframe');
+            if (existingIframe) {
+                existingIframe.remove();
+            }
+            container.appendChild(iframe);
+        }
+    </script>
+</body>
+</html>

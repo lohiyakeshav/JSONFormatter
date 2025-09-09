@@ -1,0 +1,27 @@
+{
+  "name": "JSON Formatter Test",
+  "version": "1.0.0",
+  "description": "A minimal, clean JSON formatter with strategic ad placement",
+  "features": [
+    "Format JSON",
+    "Minify JSON",
+    "Validate JSON",
+    "Syntax Highlighting",
+    "Copy to Clipboard",
+    "Local Storage Support"
+  ],
+  "responsive": {
+    "mobile": "320px - 767px",
+    "tablet": "768px - 1199px",
+    "desktop": "1200px+",
+    "largeDesktop": "1600px+"
+  },
+  "adPlacements": {
+    "hero": "728x90 banner below hero",
+    "vertical": "300x600 between editors (desktop only)",
+    "inline": "Multiple 728x90 banners in content",
+    "native": "Ads styled as content cards",
+    "sticky": "160x600 fixed side ad (large screens)",
+    "footer": "728x90 banner in footer"
+  }
+}
