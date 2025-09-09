@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter - Clean & Minimal JSON Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Google AdSense placeholder -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <!-- Clean Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">JSON Tools</div>
+            <div class="nav-links">
+                <a href="#formatter">Formatter</a>
+                <a href="#validator">Validator</a>
+                <a href="#minify">Minify</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with subtle ad -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>JSON Formatter</h1>
+            <p>Clean, fast, and minimal JSON formatting tools</p>
+        </div>
+        <!-- Native Ad Block 1 - Looks like a feature card -->
+        <div class="ad-container ad-native">
+            <div class="ad-placeholder">
+                <span class="ad-label">Sponsored</span>
+                <div class="ad-content">Ad 728x90</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Tool Controls -->
+        <div class="controls">
+            <button class="btn btn-primary" id="formatBtn">Format</button>
+            <button class="btn" id="minifyBtn">Minify</button>
+            <button class="btn" id="validateBtn">Validate</button>
+            <button class="btn" id="clearBtn">Clear</button>
+            <button class="btn" id="copyBtn">Copy</button>
+        </div>
+
+        <!-- JSON Editor Section -->
+        <div class="editor-container">
+            <!-- Input Section -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>Input JSON</h2>
+                    <span class="status" id="inputStatus"></span>
+                </div>
+                <textarea 
+                    id="jsonInput" 
+                    class="json-textarea" 
+                    placeholder="Paste your JSON here..."
+                    spellcheck="false"
+                ></textarea>
+            </div>
+
+            <!-- Side Ad - Vertical Banner -->
+            <div class="ad-container ad-vertical">
+                <div class="ad-placeholder">
+                    <span class="ad-label">Ad</span>
+                    <div class="ad-content">300x600</div>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>Formatted Output</h2>
+                    <span class="status" id="outputStatus"></span>
+                </div>
+                <div class="output-wrapper">
+                    <pre id="jsonOutput" class="json-output"></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- In-content Ad -->
+        <div class="ad-container ad-inline">
+            <div class="ad-placeholder">
+                <span class="ad-label">Advertisement</span>
+                <div class="ad-content">Ad 728x90</div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Format & Beautify</h3>
+                    <p>Instantly format messy JSON with proper indentation</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Validate JSON</h3>
+                    <p>Check for syntax errors and get helpful error messages</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Minify</h3>
+                    <p>Compress JSON by removing unnecessary whitespace</p>
+                </div>
+                <!-- Native Ad as Feature Card -->
+                <div class="feature-card ad-native-card">
+                    <span class="ad-label">Sponsored</span>
+                    <h3>Premium Tools</h3>
+                    <p>Advanced JSON processing features</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Another Ad Block -->
+        <div class="ad-container ad-inline">
+            <div class="ad-placeholder">
+                <span class="ad-label">Advertisement</span>
+                <div class="ad-content">Ad 336x280</div>
+            </div>
+        </div>
+
+        <!-- Additional Tools Section -->
+        <section class="tools-section">
+            <h2>More Tools</h2>
+            <div class="tools-grid">
+                <a href="#" class="tool-card">
+                    <h3>JSON to CSV</h3>
+                    <p>Convert JSON data to CSV format</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <h3>JSON to XML</h3>
+                    <p>Transform JSON to XML structure</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <h3>JSON Diff</h3>
+                    <p>Compare two JSON objects</p>
+                </a>
+                <a href="#" class="tool-card">
+                    <h3>Schema Generator</h3>
+                    <p>Generate JSON Schema from data</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Ad -->
+    <footer class="footer">
+        <div class="ad-container ad-footer">
+            <div class="ad-placeholder">
+                <span class="ad-label">Advertisement</span>
+                <div class="ad-content">Ad 728x90</div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <p>&copy; 2024 JSON Tools. Clean, minimal, and efficient.</p>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Side Ad for Desktop -->
+    <div class="ad-container ad-sticky">
+        <div class="ad-placeholder">
+            <span class="ad-label">Ad</span>
+            <div class="ad-content">160x600</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
